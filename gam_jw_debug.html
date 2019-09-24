@@ -1,0 +1,64 @@
+<html>
+    <head>
+            <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+            <script>
+                var googletag = window.googletag || {cmd: []};
+                
+                googletag.cmd.push(function () {
+                    // Center ads
+                    googletag.pubads().setCentering(true);
+                    googletag.enableServices();
+
+                    // enable async loading
+                    googletag.pubads().enableAsyncRendering();
+
+                    // Disables the call to DFP until refresh is called
+                    googletag.pubads().disableInitialLoad();
+                });
+
+                function defineAndDisplayAds(id, pos) {
+                    googletag.cmd.push(function () {
+                        var adSlot = googletag.defineSlot('/8578/dagbladet.no/forside', [[980, 300], [970, 250]], id).setTargeting('pos', [pos]).addService(googletag.pubads());
+                        googletag.display(adSlot);
+                        
+                        googletag.cmd.push(function () {
+                            googletag.pubads().refresh(adSlot, { changeCorrelator: false });
+                        });
+                    });
+                }
+                
+            </script>
+
+    </head>
+    <body>
+        <!-- /8578/dagbladet.no/forside ad above player -->
+        <div id='ad1'>
+            <script>
+                defineAndDisplayAds('ad1','desktopbanner1');
+            </script>
+        </div>
+
+        <div itemscope itemtype="https://schema.org/VideoObject"><meta itemprop="uploadDate" content="2019-09-23T10:58:42"/><meta itemprop="name" content="Slakter Ving: - Må betale selv"/><meta itemprop="description" content="KONKURS: Slik reagerer Ving-turistene på Thomas Cook-konkursen. Video: Henriette Eilertsen / Dagbladet TV"/><meta itemprop="duration" content="P0D" /><meta itemprop="thumbnailUrl" content="https://content.jwplatform.com/thumbs/AazYSvfd-1920.jpg"/><meta itemprop="contentUrl" content="https://content.jwplatform.com/videos/AazYSvfd-lxXPwW1V.mp4"/><script src="https://cdn.jwplayer.com/players/AazYSvfd-bqCwhc5a.js"></script></div>
+
+        <!-- /8578/dagbladet.no/forside ad after player -->
+        <div id='ad2'>
+            <script>
+                setTimeout("defineAndDisplayAds('ad2','desktopbanner2')",300);
+            </script>
+        </div>
+
+         <!-- /8578/dagbladet.no/forside ad after player -->
+         <div id='ad3'>
+            <script>
+                setTimeout("defineAndDisplayAds('ad3','desktopbanner3')",300);
+            </script>
+        </div>
+
+        <!-- /8578/dagbladet.no/forside ad after player -->
+        <div id='ad4'>
+            <script>
+                setTimeout("defineAndDisplayAds('ad4','desktopbanner4')",300);
+            </script>
+        </div>
+    </body>
+</html>
